@@ -1,1 +1,24 @@
-<p>top-tourist-locations works!</p>
+<h2>Top Tourist Locations</h2>
+
+<div *ngFor="let location of touristLocations" class="tourist-location">
+  <h3>{{ location.title }}</h3>
+  <div class="tourist-location-image">
+    <img width="500" [src]="location.imagePath">
+  </div>
+  <div class="tourist-location-description">
+    <h4>Description</h4>
+    <p>{{ location.description }}</p>
+  </div>
+  <div class="tourist-location-location">
+    <h4>Where</h4>
+    <p>{{ location.location }}</p>
+  </div>
+  <div class="tourist-location-age-range">
+    <h4>Age Range</h4>
+    <p>{{ location.ageRange }}</p>
+  </div>
+  <div *ngIf="location.travelInformation">
+    <h4>Travel Information</h4>
+    <p>{{ location.travelInformation }}</p>
+  </div>
+</div>
